@@ -9,7 +9,7 @@ let campSchema = new mongoose.Schema({
     required: 'Camp name is Required'
   },
   date:{
-    type: String,
+    type: Date,
     required: 'Date is required'
   }
 });

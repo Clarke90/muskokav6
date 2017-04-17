@@ -11,8 +11,11 @@
       <div class="block">
         <input type="text" class="form-control" placeholder="Last name" aria-describedby="basic-addon1">
       </div>
-      </div>
-
+      <select name="cars">
+      <% for (var i = 0; i < Camp.length; i++) { %>
+       <option value="volvo"><%= Camp[i].date %></option>
+          <% } %>
+      </select>
       </div>
        <button id="success" type="button" class="btn btn-primary">Add a child</button>
        <br>

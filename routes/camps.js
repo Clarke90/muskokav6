@@ -3,7 +3,48 @@ var router = express.Router();
 // reference this model for CRUDNESS
 let Camp = require('../models/camp');
 
+//Get child login and date data
+router.get('/child-login', function(req, res, next) {
+Camp.find(function(err, queryResults){
+  if (err){
+    console.log(err);
+      res.render('error');
+    // res.end(err);
+    return;
+  }
+else{
+  console.log(queryResults);
+  res.render('child-login', {
+    Camp: queryResults,
+    title: 'Please Sign-in your child'
+  });
 
+}
+  });
+});
+
+
+//POST /_id to save children
+// router.post('/child-login/:_id', function(req, res, next) {
+//     // create an fill a camp object
+//     let Camper-signin = new Camper-signin({
+//         _id: req.params._id,
+//         campName: req.body.campName,
+//         date: req.body.date,
+//     });
+//
+//     //call mongoose update method, passing the id and then the updated camp
+//
+//     Camp.update({ _id: req.params._id }, camp, function(err) {
+//         if (err) {
+//             console.log(err);
+//             res.render('error');
+//             return;
+//         }
+//         res.redirect('/staff-camper-registration')
+//     })
+//
+// });
 
 /* GET /staff-camper-registration*/
 router.get('/staff-camper-registration', function(req, res, next) {
@@ -27,6 +68,9 @@ else{
 });
 
 
+
+
+
 //add-camp-day
 router.get('/add-camp-day', function(req, res, next){
     res.render('add-camp-day', { title:'Add camp day'});
@@ -48,11 +92,6 @@ router.post('/add-camp-day', function(req, res, next) {
         res.redirect('staff-camper-registration');
     });
 });
-
-
-
-
-
 
 //GET /edit/_id show edit form
 router.get('/camp-edit/:_id', function(req, res, next) {
@@ -89,7 +128,6 @@ router.post('/camp-edit/:_id', function(req, res, next) {
         }
         res.redirect('/staff-camper-registration')
     })
-
 });
 
 //GET /camp-delete/_id to delete the camp

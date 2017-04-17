@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+// reference this model for CRUDNESS
+let Camp = require('../models/camp');
 
 //adding references for register and login for staff
 let passport = require('passport');
@@ -13,11 +15,6 @@ router.get('/', function(req, res, next) {
 // staff dash
 router.get('/staff-dashboard', function(req, res, next){
   res.render('staff-dashboard', { title:'Staff Dashboard'});
-});
-
-// child-login
-router.get('/child-login', function(req, res, next){
-  res.render('child-login', { title:'Please sign-in your child'});
 });
 
 //child-signout

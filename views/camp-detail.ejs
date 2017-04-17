@@ -10,25 +10,18 @@
   <tr>
     <th class="text-center">First Name</th>
     <th class="text-center">Last Name</th>
-    <th class="text-center">Last Name</th>
-
   </tr>
     <% for (var i = 0; i < Camper.length; i++) { %>
   <tr>
     <td><%= Camper[i].firstName %></td>
     <td><%= Camper[i].lastName %></td>
-
   </tr>
     <% } %>
-  <tr>
-    <td></td>
-    <td></td>
-  <td><%= Camper[i] %></td>
-  </tr>
+
 </table>
 
 
-<a href="/add-camper">Add campers </a><br><br>
+<a href="/add-camper"><i class="fa fa-plus" aria-hidden="true"></i>Add campers </a><br><br>
 
 
 <a   role="button" class="btn btn-primary" href="/staff-camper-registration">Go Back</a>

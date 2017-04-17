@@ -4,13 +4,23 @@
     <title>Single Camper Profile</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <section>
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-4 sidebar">
             <img  class="image-profile thumbnail text-center" src="/uploads/<%= Camper.fileupload %>" width="180px" height="200px" alt="Profile Image Not Set"/>
-            <a type="button" name="button" href="../edit/<%= Camper._id %>" class="btn btn-primary">Edit Profile</a>
+              <hr>
+
+                  <hr>
+                  <h4><strong>Location</strong></h4>
+                  <p><%= Camper.address %></p>
+                  <hr>
+                  <h4><strong>Birthday</strong></h4>
+                  <p>January 01 1901</p>
+
+            <a type="button" name="button" href="../edit/<%= Camper._id %>" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit Profile</a>
         </div>
         <div class="col-sm-8 align-left">
             <h2><%= Camper.firstName %>  <%= Camper.lastName %></h2>
@@ -22,9 +32,8 @@
                 <li>Address: <%= Camper.address %></li>
                 <li>Email: <%= Camper.email %></li>
             </ul>
-
         </div>
-          <a role="button" class="btn btn-primary pull-bottom pull-right" href="/staff-camper-profiles">Go Back To Camper Profiles</a>
+          <a role="button" class="btn btn-primary pull-bottom pull-right" href="/staff-camper-profiles">Go Back</a>
     </div>
   </section>
 

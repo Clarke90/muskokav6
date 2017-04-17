@@ -12,6 +12,7 @@ var passport = require('passport');
 let session = require('express-session');
 let localStrategy = require('passport-local').Strategy;
 
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 // add the controller
@@ -76,7 +77,6 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
 
 // error handler
 app.use(function(err, req, res, next) {
